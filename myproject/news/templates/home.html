@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    <h1>Hello, {{user.username}}</h1>
+    <form method="post" action={% url "logout" %}>
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+    </form>
+    {% endif %}
+
+    <h2>Explore All news</h2>
+    <p>{{number_of_news}}</p>
+    {% for news in news_list %}
+    <a href="news/{{news.id}}/">{{news.title}}</a>
+    {% endfor %}
+  </body>
+</html>

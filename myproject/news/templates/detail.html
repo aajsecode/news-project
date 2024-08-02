@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{news.title}}</title>
+  </head>
+  <body>
+    <img src="{{news.image.url}}" alt="{{news.title}}" />
+    <h1>{{news.title}}</h1>
+    <p>{{news.content}}</p>
+    <p>Created: {{news.created_date}}</p>
+    <p>Updated: {{news.updated_date}}</p>
+    <p>Category: {{news.category.name}}</p>
+    <div>
+      <img
+        src="{{news.authored_by.image.url}}"
+        alt="{{news.authored_by.username}}"
+      />
+      <p>Authored by:</p>
+      <p>Name: {{news.authored_by.username}}</p>
+      <p>Subtitle: {{news.authored_by.subtitle}}</p>
+      <p>Bio: {{news.authored_by.bio}}</p>
+    </div>
+  </body>
+</html>

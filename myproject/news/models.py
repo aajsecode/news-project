@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 """
@@ -53,7 +54,7 @@ class News(models.Model):
     content = models.TextField(max_length=1000)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-    authored_by = models.ForeignKey(Author, on_delete=models.CASCADE)
+    authored_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, null=True, blank=True
     )
