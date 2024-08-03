@@ -22,5 +22,9 @@
       <p>Subtitle: {{news.authored_by.subtitle}}</p>
       <p>Bio: {{news.authored_by.bio}}</p>
     </div>
+    {% if request.user == news.authored_by %}
+      <a href={% url "news_update" pk=news.id %}>Update</a>
+      <a href={% url "news_delete" pk=news.id %}>Delete</a>
+    {% endif %}
   </body>
 </html>

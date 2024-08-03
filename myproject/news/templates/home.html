@@ -17,7 +17,7 @@
     <h2>Explore All news</h2>
     <p>{{number_of_news}}</p>
     {% for news in news_list %}
-    <a href="news/{{news.id}}/">{{news.title}}</a>
+    <a href={% url "detail" pk=news.id%}>{{news.title}}</a>
     {% endfor %}
   </body>
 </html>

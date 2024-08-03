@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "news",
     "accounts",
     "view_counter",
+    "author",
 ]
 
 MIDDLEWARE = [

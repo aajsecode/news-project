@@ -1,0 +1,17 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{author.username}}'s profile</title>
+  </head>
+  <body>
+    <img src="{{author.image}}" alt="{{author.username}}'s image" />
+    <h1>{{author.username}}</h1>
+    <p>{{author.subtitle}}</p>
+    <p>{{author.bio}}</p>
+    <h2>Posts written by {{author.username}}:</h2>
+    {% for news in author_posts %}
+    <a href= {% url "detail" pk=news.id%}>{{news.title}}</a>
+    {% endfor %}
+  </body>
+</html>
